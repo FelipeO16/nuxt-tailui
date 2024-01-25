@@ -1,16 +1,17 @@
 import type { Config } from "tailwindcss";
 
 export default <Partial<Config>>{
+  content: ['"presets/**/*.{js,vue,ts}"'],
   theme: {
     extend: {
       boxShadow: {
-        'subtle': '0px 1px 12px rgba(0, 0, 0, 0.04)', 
+        subtle: "0px 1px 12px rgba(0, 0, 0, 0.04)",
       },
       zIndex: {
-        '500': '500',
+        "500": "500",
       },
       animation: {
-        'slide': 'fadein 0.5s ease forwards',
+        slide: "fadein 0.5s ease forwards",
       },
       colors: {
         neutrals: {

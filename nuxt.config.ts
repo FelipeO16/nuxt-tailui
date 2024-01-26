@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
   ],
+  primevue: {
+    ripple: true,
+  },
   app: {
     head: {
       link: [

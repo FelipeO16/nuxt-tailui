@@ -1,6 +1,5 @@
 <template>
   <div class="card flex justify-center">
-    {{ selectedTheme }}
     <CascadeSelect
       v-model="selectedTheme"
       :options="themes"

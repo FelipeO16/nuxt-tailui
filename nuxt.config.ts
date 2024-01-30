@@ -3,13 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "nuxt-primevue",
-    "nuxt-icons",
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
+    "nuxt-icon",
   ],
-  primevue: {
-    ripple: true,
-  },
   app: {
     head: {
       link: [

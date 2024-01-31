@@ -8,35 +8,38 @@
     <div
       class="w-full lg:w-1/2 h-full flex justify-center items-center relative"
     >
-      <div class="flex justify-center items-center login-form">
+      <div class="flex justify-center items-center login-form w-1/2">
         <form>
           <Card class="p-8">
-            <template #title>Login</template>
+            <template #title>
+              <div class="flex flex-col gap-4 items-center">
+                <Logo
+                  type="text"
+                  class="self-center w-2/5 text-center select-none"
+                />
+                <h1>Login</h1>
+              </div>
+            </template>
 
             <template #subtitle>
-              <span>Fake credentials, only test</span>
+              <div class="w-full flex justify-center items-center">
+                <span>Fake credentials, only test</span>
+              </div>
             </template>
 
             <template #content>
-              <div class="mb-3">
-                <InputText
-                  class="w-full"
-                  v-model="username"
-                  placeholder="Username"
-                />
-              </div>
-              <div class="mb-3">
-                <Password
-                  placeholder="Password"
-                  class="w-full"
-                  v-model="password"
-                  toggleMask
-                />
+              <div class="inputs flex flex-col gap-4 items-center">
+                <div>
+                  <InputText v-model="username" placeholder="Username" />
+                </div>
+                <div class="mb-4">
+                  <Password placeholder="Password" v-model="password" escape />
+                </div>
               </div>
             </template>
             <template #footer>
               <div class="flex justify-center">
-                <NuxtLink to="/docs" rel="noopener">
+                <NuxtLink to="/" rel="noopener">
                   <Button>
                     <div class="font-semibold">
                       <Icon name="material-symbols:person-check-rounded" />
@@ -50,13 +53,7 @@
         </form>
       </div>
       <div class="absolute top-2 left-2 flex gap-4">
-        <Card>
-          <template #content>
-            <Logo class="w-1/6" />
-            <Teste />
-          </template>
-          =
-        </Card>
+        <ThemeConfig class="cursor-pointer" />
       </div>
     </div>
   </div>
@@ -65,4 +62,6 @@
 <script setup lang="ts">
 const username = ref("");
 const password = ref("");
+
+let showSidebar = ref(false);
 </script>

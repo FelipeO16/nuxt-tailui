@@ -49,7 +49,15 @@
           </Card>
         </form>
       </div>
-      <Teste class="absolute top-2 left-2" />
+      <div class="absolute top-2 left-2 flex gap-4">
+        <Card>
+          <template #content>
+            <Logo class="w-1/6" />
+            <Teste />
+          </template>
+          =
+        </Card>
+      </div>
     </div>
   </div>
 </template>

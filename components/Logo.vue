@@ -1,5 +1,6 @@
 <template>
   <svg
+    v-if="props.type === 'text'"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 630 430"
     class="svg-logo"
@@ -25,7 +26,20 @@
       </g>
     </g>
   </svg>
+  <img
+    v-else
+    src="/assets/image/logo.png"
+    alt="Tail UI"
+    class="img-logo"
+    style="height: auto"
+  />
 </template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  type: "text" | "img";
+}>();
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");

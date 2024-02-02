@@ -1,6 +1,6 @@
 <template>
   <div class="themes">
-    <Logo type="img" class="w-20" @click="showSidebar = true" />
+    <Logo :type="type" class="w-20" @click="showSidebar = true" />
     <Sidebar v-model:visible="showSidebar" position="right">
       <div class="flex flex-col justify-center items-center gap-8">
         <h1 class="text-xl">Mode:</h1>
@@ -70,6 +70,10 @@ let showSidebar = ref(false);
 
 let selectedTheme = ref({ mode: "dark", color: "amber" });
 let currentTheme = ref("aura-dark-amber");
+
+const props = defineProps<{
+  type: "text" | "img" | "icon";
+}>();
 
 function changeTheme() {}
 

@@ -56,12 +56,17 @@
         <ThemeConfig class="cursor-pointer" />
       </div>
     </div>
+    <Teste />
   </div>
 </template>
 
 <script setup lang="ts">
 const username = ref("");
 const password = ref("");
+
+definePageMeta({
+  layout: false,
+});
 
 let showSidebar = ref(false);
 </script>

@@ -27,17 +27,23 @@
     </g>
   </svg>
   <img
-    v-else
+    v-else-if="props.type === 'img'"
     src="/assets/image/logo.png"
     alt="Tail UI"
     class="img-logo"
     style="height: auto"
   />
+  <Icon
+    v-else
+    name="mdi:theme-light-dark"
+    color="var(--primary-color)"
+    class="icon-logo w-full h-full"
+  />
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  type: "text" | "img";
+  type: "text" | "img" | "icon";
 }>();
 </script>
 

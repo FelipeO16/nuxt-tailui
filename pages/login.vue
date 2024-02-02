@@ -2,9 +2,7 @@
   <div class="h-screen flex items-center bg-[#1c1c1c]">
     <div
       class="left-side lg:flex justify-center items-center hidden lg:w-1/2 h-full"
-    >
-      <img src="/assets/image/bg.png" class="h-full w-full" />
-    </div>
+    ></div>
     <div
       class="w-full lg:w-1/2 h-full flex justify-center items-center relative"
     >
@@ -58,3 +56,10 @@
 const username = ref("");
 const password = ref("");
 </script>
+
+<style scoped>
+.left-side {
+  background: #92b296 url("/assets/images/bg.png") no-repeat center center;
+  background-size: 100%;
+}
+</style>

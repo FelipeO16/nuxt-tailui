@@ -55,12 +55,15 @@
       </div>
     </div>
     <Teste />
+    <pre>{{ libraries }}</pre>
   </div>
 </template>
 
 <script setup lang="ts">
 const username = ref("");
 const password = ref("");
+
+const { libraries } = await $fetch("/api/libraries");
 
 definePageMeta({
   layout: false,

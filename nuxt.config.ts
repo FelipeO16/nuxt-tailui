@@ -6,7 +6,9 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
     "nuxt-icon",
+    "@nuxtjs/supabase",
   ],
+  ssr: false,
   app: {
     head: {
       link: [

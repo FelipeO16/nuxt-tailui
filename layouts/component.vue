@@ -10,7 +10,7 @@
       </template>
     </Menu>
 
-    <div class="h-full">
+    <div class="h-full w-full">
       <slot></slot>
     </div>
   </div>

@@ -26,13 +26,13 @@
       </g>
     </g>
   </svg>
-  <!-- <img
+  <img
     v-else-if="props.type === 'img'"
-    src="/assets/image/logo.png"
+    src="/assets/images/logo.png"
     alt="Tail UI"
     class="img-logo"
     style="height: auto"
-  /> -->
+  />
   <Icon
     v-else
     name="mdi:theme-light-dark"

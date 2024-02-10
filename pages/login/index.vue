@@ -36,32 +36,68 @@
               </div>
             </template>
             <template #footer>
-              <div class="flex justify-center">
-                <NuxtLink to="/" rel="noopener">
-                  <Button>
-                    <div class="font-semibold">
-                      <Icon name="material-symbols:person-check-rounded" />
-                      Login
-                    </div>
-                  </Button>
-                </NuxtLink>
+              <div class="flex justify-center gap-2">
+                <!-- <NuxtLink to="/" rel="noopener"> -->
+                <Button @click="signInWithOAuth">
+                  <div class="font-semibold">
+                    <Icon name="material-symbols:person-check-rounded" />
+                    Login
+                  </div>
+                </Button>
+                <Button @click="signOut" outlined v-if="user">
+                  <div class="font-semibold">
+                    <Icon name="material-symbols:person-check-rounded" />
+                    Logout
+                  </div>
+                </Button>
+                <!-- </NuxtLink> -->
               </div>
             </template>
           </Card>
         </form>
       </div>
       <div class="absolute top-2 left-2 flex gap-4">
-        <ThemeConfig class="cursor-pointer" />
+        <ThemeConfig class="cursor-pointer" :type="'icon'" />
       </div>
     </div>
-    <Teste />
-    <pre>{{ libraries }}</pre>
   </div>
 </template>
 
 <script setup lang="ts">
 const username = ref("");
 const password = ref("");
+
+const supabase = useSupabaseClient();
+const user = useSupabaseUser();
+
+watchEffect(() => {
+  // Can be uncommented in next nuxt version when https://github.com/nuxt/nuxt/issues/21841 is fixed
+  if (user.value) {
+    console.log("navigate to / !");
+    console.log(user.value);
+    // return navigateTo('/')
+  }
+});
+
+const signInWithOAuth = async () => {
+  const { error, data } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+    options: {
+      redirectTo: "http://localhost:3000/",
+    },
+  });
+  alert(JSON.stringify(data));
+  if (error) {
+    console.log(error);
+  }
+};
+
+const signOut = async () => {
+  const { error } = await supabase.auth.signOut();
+  if (error) {
+    console.log(error);
+  }
+};
 
 const { libraries } = await $fetch("/api/libraries");
 

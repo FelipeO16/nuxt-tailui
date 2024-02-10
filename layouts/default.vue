@@ -38,6 +38,7 @@
 </template>
 
 <script setup lang="ts">
+const user = useSupabaseUser();
 const items = ref([
   {
     label: "Home",

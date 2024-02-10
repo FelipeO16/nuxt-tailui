@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         {
           id: "theme-link",
           rel: "stylesheet",
-          href: process.env.NUXT_BASE_URL + "aura-light-amber/theme.css",
+          href: process.env.NUXT_BASE_URL + "aura-dark-cyan/theme.css",
         },
       ],
     },

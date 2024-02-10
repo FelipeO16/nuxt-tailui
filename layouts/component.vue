@@ -45,6 +45,7 @@ const items = ref([
       {
         label: "Templates",
         icon: "material-symbols:list-alt-rounded",
+        shortcut: "/templates",
       },
     ],
   },

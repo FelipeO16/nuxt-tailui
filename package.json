@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.12.0",
     "@nuxtjs/supabase": "^1.1.6",
     "@nuxtjs/tailwindcss": "^6.11.0",
     "@vueuse/nuxt": "^9.1.1",

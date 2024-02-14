@@ -1,5 +1,5 @@
 <template>
-  <div class="hud flex flex-col gap-4 h-full">
+  <div class="hud flex flex-col h-full">
     <TabMenu
       :model="items"
       @tabChange="teste"
@@ -247,7 +247,18 @@
         </div>
       </div>
     </div>
-    <Teste></Teste>
+    <div class="api w-full h-full flex flex-col p-8 gap-10" v-if="index == 2">
+      <div class="text-4xl font-bold">
+        Sincronizando com <span class="uppercase">{{ script_name }}</span>
+      </div>
+      <div class="text-xl font-normal text-zinc-400">
+        Para atualizar {{ script_name }}, você precisa enviar um objeto com os
+        seguintes dados:
+      </div>
+      <div class="p-8 bg-[#1c1c1c]">
+        <ContentDoc path="/api/hud" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -259,6 +270,8 @@ definePageMeta({
   description: "Components page",
   layout: "component",
 });
+
+let script_name = "hud";
 
 let health = ref(100);
 let armor = ref(100);
@@ -344,6 +357,7 @@ timer();
 const items = ref([
   { label: "Player", icon: "material-symbols:person-rounded" },
   { label: "Carro", icon: "material-symbols:directions-car-rounded" },
+  { label: "Api", icon: "material-symbols:note-alt" },
 ]);
 </script>
 

@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter();
 const items = ref([
   {
     label: "Menu",
@@ -25,11 +26,17 @@ const items = ref([
         label: "Home",
         icon: "material-symbols:other-houses-outline",
         shortcut: "/",
+        command: () => {
+          router.push("/");
+        },
       },
       {
         label: "Features",
         icon: "material-symbols:featured-play-list-rounded",
         shortcut: "#feat",
+        command: () => {
+          router.push("/features");
+        },
       },
     ],
   },
@@ -41,17 +48,43 @@ const items = ref([
         label: "Components",
         icon: "material-symbols:list-alt-rounded",
         shortcut: "/components",
+        command: () => {
+          router.push("/components");
+        },
       },
       {
         label: "Templates",
         icon: "material-symbols:list-alt-rounded",
         shortcut: "/templates",
+        command: () => {
+          router.push("/templates");
+        },
       },
     ],
   },
 
   {
     separator: true,
+  },
+  {
+    items: [
+      {
+        label: "Profile Card",
+        icon: "material-symbols:person-search",
+        shortcut: "/templates/profile-card",
+        command: () => {
+          router.push("/templates/profile-card");
+        },
+      },
+      {
+        label: "hud",
+        icon: "material-symbols:person-rounded",
+        shortcut: "/templates/hud",
+        command: () => {
+          router.push("/templates/hud");
+        },
+      },
+    ],
   },
 ]);
 </script>
